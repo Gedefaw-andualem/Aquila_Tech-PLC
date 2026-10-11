@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquila Tech PLC</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header / Navigation (Logo on the LEFT side) -->
+    <header>
+        <a href="#home" class="logo">
+            <img src="logo.JPG" alt="Aquila Tech Logo" class="nav-logo-img">
+            <span>AQUILA<span class="tech-text">TECH</span></span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>  
+                <li><a href="view_message.php">View Messages</a></li> 
+                <li><a href="#contact" class="btn-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="logo.JPG" alt="Aquila Tech Logo" class="hero-logo">
+            <h1>WELCOME TO AQUILA TECH PLC</h1>
+            <h2>SMART SOLUTIONS, BETTER FUTURE</h2>
+            <p>ዘመናዊ የቴክኖሎጂ መፍትሄዎችን በአንድ ቦታ!
+            ፣ AI (Artificial Intelligence)፣ ድረ-ገጽ (Website) ልማት፣ የሞባይል መተግበሪያዎች፣ የቢዝነስ አውቶሜሽን፣ ERP እና Enterprise Systems፣ Cloud & Cybersecurity፣ IT Consulting
+            ፣የቴክኖሎጂ ዜናዎች፣ ነፃ ትምህርቶች፣ AI ምክሮች እና የፕሮጀክት ስራዎች እኛ ጋር ያገኛሉ!</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Get Started</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+
+            <!-- 1. Web Development Box -->
+            <a href="web-development.html" class="card-link">
+                <div class="card">
+                    <div class="icon-box">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive, and fast websites built using the latest technology stacks.</p>
+                    <span class="card-btn">Learn More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- 2. Mobile Apps Box -->
+            <a href="mobile-apps.html" class="card-link">
+                <div class="card">
+                    <div class="icon-box">📱</div>
+                    <h3>Mobile Apps</h3>
+                    <p>User-friendly Android and iOS applications with smooth performance.</p>
+                    <span class="card-btn">Learn More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- 3. Custom Software Box -->
+            <a href="custom-software.html" class="card-link">
+                <div class="card">
+                    <div class="icon-box">⚙️</div>
+                    <h3>Custom Software</h3>
+                    <p>Tailored management systems and backend solutions for your unique workflow.</p>
+                    <span class="card-btn">Learn More &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with Aquila Tech Software PLC</p>
+
+        <form action="send_message.php" method="POST" class="contact-form">
+            <input type="text" name="full_name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            
+            <!-- Subject Dropdown -->
+            <select name="subject_option" id="subjectSelect" onchange="toggleOtherSubject()" required>
+                <option value="" disabled selected hidden>Select Subject</option>
+                <option value="Educational">Educational</option>
+                <option value="Governmental">Governmental</option>
+                <option value="Health">Health</option>
+                <option value="Business/Corporate">Business / Corporate</option>
+                <option value="Personal">Personal</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- "Other" ሲመረጥ የሚወጣ የጽሁፍ ሳጥን -->
+            <div id="otherSubjectGroup" style="display: none; width: 100%;">
+                <input type="text" name="custom_subject" id="customSubjectInput" placeholder="Please specify your subject...">
+            </div>
+
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Aquila Tech PLC. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript: Other ሲመረጥ ሳጥን እንዲከፍት የሚያደርግ -->
+    <script>
+    function toggleOtherSubject() {
+        var selectBox = document.getElementById("subjectSelect");
+        var otherInputGroup = document.getElementById("otherSubjectGroup");
+        var customInput = document.getElementById("customSubjectInput");
+
+        if (selectBox.value === "Other") {
+            otherInputGroup.style.display = "block";
+            customInput.setAttribute("required", "required");
+        } else {
+            otherInputGroup.style.display = "none";
+            customInput.removeAttribute("required");
+            customInput.value = "";
+        }
+    }
+    </script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="eUnqMWUXld0uqjhYTSKtk";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>
